@@ -21,14 +21,22 @@ public class Main {
             IntW q1Handle = new IntW(0);
             vrep.simxGetObjectHandle(clientID, "Q1", q1Handle, vrep.simx_opmode_blocking);
             System.out.println("Q1 handle: " + q1Handle.getValue());
+            FloatWA currentThrusts = new FloatWA(4);
+            int result = vrep.simxCallScriptFunction(clientID,"Q1",vrep.sim_scripttype_childscript,"getThrusts",null,null,null,null,null,currentThrusts,null,null,vrep.simx_opmode_blocking);
 
             for(int i = 0; i < 1000; i++){
-                IntWA outInts=new IntWA(0);
-                FloatWA inFloats=new FloatWA(4);
-                inFloats.getArray()[0] = Random
-                int result=vrep.simxCallScriptFunction(clientID,"Q1",vrep.sim_scripttype_childscript,"createDummy_function",null,inFloats,null,null,outInts,null,null,null,vrep.simx_opmode_blocking);
+                FloatWA newThrusts=new FloatWA(4);
+                for(int index = 0; index < 4; index++){
+                    newThrusts.getArray()[index] = currentThrusts.getArray()[index] + 0.001f;
+                }
+
+                result = vrep.simxCallScriptFunction(clientID,"Q1",vrep.sim_scripttype_childscript,"setThrusts",null,newThrusts,null,null,null,currentThrusts,null,null,vrep.simx_opmode_blocking);
                 if (result==vrep.simx_return_ok)
-                    System.out.format("Dummy handle: %d\n",outInts.getArray()[0]); // display the reply from V-REP (in this case, the handle of the created dummy)
+                    System.out.format(String.format("\nCurrent thrusts: %s %s %s %s",
+                            currentThrusts.getArray()[0],
+                            currentThrusts.getArray()[1],
+                            currentThrusts.getArray()[2],
+                            currentThrusts.getArray()[3]));
                 else
                     System.out.format("Remote function call failed\n");
                 Thread.sleep(10);

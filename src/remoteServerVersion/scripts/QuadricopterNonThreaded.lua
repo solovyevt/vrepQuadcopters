@@ -11,16 +11,11 @@
 --    sendFloats(server, {string.len(str)})
 --    server:send(str)
 --end
-function setThrusts(inInts,inFloats,inStrings,inBuffer)
-    thrusts[1] = inFloats[1]
-    thrusts[2] = inFloats[2]
-    thrusts[3] = inFloats[3]
-    thrusts[4] = inFloats[4]
-    return {},{thrusts[1], thrusts[2], thrusts[3], thrusts[4]},{},''
-end
-
-function getThrusts(inInts,inFloats,inStrings,inBuffer)
-    return thrusts
+function setThrusts(a, b, c, d)
+    thrusts[1] = a
+    thrusts[2] = b
+    thrusts[3] = c
+    thrusts[4] = d
 end
 
 function scalarTo3D(s, a)
