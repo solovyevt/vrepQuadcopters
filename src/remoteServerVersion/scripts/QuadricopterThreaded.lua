@@ -51,7 +51,7 @@ if (sim_call_type==sim_childscriptcall_initialization) then
     --
     -- Following 2 instructions might also be useful: simGetNameSuffix and simSetNameSuffix
 
-    thrusts = {5.0, 5.0, 5.0, 5.0}
+    thrusts = {0.0, 0.0, 0.0, 0.0}
 
     base = simGetObjectHandle('Quadricopter_base')
 
@@ -82,16 +82,17 @@ if (sim_call_type==sim_childscriptcall_initialization) then
     end
 
     particleCount = math.floor(particleCountPerSecond * timestep)
-
+    frontCam=simGetObjectHandle('Front_camera')
+    frontView=simFloatingViewAdd(0.7,0.9,0.2,0.2,0)
+    simAdjustView(frontView,frontCam,64)
 end
 
 
 if (sim_call_type==sim_childscriptcall_actuation) then
+
     for i = 1, 4, 1 do
-
         thrust = thrusts[i]
-
-        force = particleCount* particleDensity * thrust * math.pi * math.pow(particleSizes[i],3) / (6*timestep)
+        force = particleCount * particleDensity * thrust * math.pi * math.pow(particleSizes[i],3) / (6 * timestep)
         torque = math.pow(-1, i+1)*.002 * thrust
 
         -- Set float signals to the respective propellers, and propeller respondables
@@ -119,7 +120,5 @@ end
 
 
 if (sim_call_type==sim_childscriptcall_cleanup) then
-
-    -- Put some restoration code here
-
+    simFloatingViewRemove(frontView)
 end

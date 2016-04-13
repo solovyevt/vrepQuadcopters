@@ -27,7 +27,7 @@ public class Main {
             for(int i = 0; i < 1000; i++){
                 FloatWA newThrusts=new FloatWA(4);
                 for(int index = 0; index < 4; index++){
-                    newThrusts.getArray()[index] = currentThrusts.getArray()[index] + 0.001f;
+                    newThrusts.getArray()[index] = currentThrusts.getArray()[index] + 0.01f;
                 }
 
                 result = vrep.simxCallScriptFunction(clientID,"Q1",vrep.sim_scripttype_childscript,"setThrusts",null,newThrusts,null,null,null,currentThrusts,null,null,vrep.simx_opmode_blocking);
