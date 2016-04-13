@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="64Bit">
+    <CLASSES />
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://C:/Program Files (x86)/V-REP3/V-REP_PRO_EDU/programming/remoteApiBindings/java/lib/64Bit" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>
