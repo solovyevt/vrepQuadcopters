@@ -2,7 +2,6 @@ package remoteServerVersion;
 
 import coppelia.FloatWA;
 import coppelia.IntW;
-import coppelia.IntWA;
 import coppelia.remoteApi;
 
 /**

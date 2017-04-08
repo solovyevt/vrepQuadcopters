@@ -31,20 +31,20 @@ public class IntWA
     {
         return w;
     }
-	
+
     public char[] getCharArrayFromArray()
     {
 		char[] a=new char[4*w.length];
 		for (int i=0;i<w.length;i++)
 		{
-			a[4*i+0]=(char)(w[i]&0xff);	
+			a[4*i+0]=(char)(w[i]&0xff);
 			a[4*i+1]=(char)((w[i] >>> 8)&0xff);
 			a[4*i+2]=(char)((w[i] >>> 16)&0xff);
 			a[4*i+3]=(char)((w[i] >>> 24)&0xff);
 		}
         return a;
     }
-	
+
     public void initArrayFromCharArray(char[] a)
     {
         w = new int[a.length/4];

@@ -10,12 +10,12 @@ public class CharWA
     {
         w = new char[i];
     }
-	
+
     public CharWA(String s)
     {
 		w=s.toCharArray();
     }
-	
+
     public String getString()
     {
 		String a;

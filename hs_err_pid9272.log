@@ -43,13 +43,13 @@ Top of Stack: (sp=0x00000000025cee40)
 0x00000000025cef00:   0000000000000002 00000000024cd800
 0x00000000025cef10:   00000000025cf010 00000000026e5b62
 0x00000000025cef20:   00000000025cef20 00000000191c66a8
-0x00000000025cef30:   00000000025cefa0 00000000191ca3a0 
+0x00000000025cef30:   00000000025cefa0 00000000191ca3a0
 
 Instructions: (pc=0x00000000748dd185)
 0x00000000748dd165:   89 5c 24 20 48 c7 44 24 28 00 00 00 00 74 0a 48
 0x00000000748dd175:   8d 4c 24 20 e8 22 c2 13 00 80 3d 3c 41 6c 00 00
 0x00000000748dd185:   48 8b 17 74 15 8b 52 08 8b 0d fd 95 65 00 48 d3
-0x00000000748dd195:   e2 48 03 15 eb 95 65 00 eb 04 48 8b 52 08 48 8b 
+0x00000000748dd195:   e2 48 03 15 eb 95 65 00 eb 04 48 8b 52 08 48 8b
 
 
 Register to memory mapping:
@@ -67,7 +67,7 @@ R9 =0x0000000000003001 is an unknown value
 R10=0x00000000005697f0 is an unknown value
 R11=0x00000000025cee60 is pointing into the stack for thread: 0x00000000024cd800
 R12=0x0000000000000000 is an unknown value
-R13={method} {0x00000000191c66b0} 'simxGetObjectHandle' '(ILjava/lang/String;Lcoppelia/IntW;I)I' in 'coppelia/remoteApi'
+R13={method} {0x00000000191c66b0} 'simxGetObjectHandle' '(ILjava/lang/String;Lcoppelia/IntW;I)I' in 'com.quadcopter.coppelia/remoteApi'
 R14=0x00000000025cef90 is pointing into the stack for thread: 0x00000000024cd800
 R15=0x00000000024cd800 is a thread
 
@@ -79,7 +79,7 @@ C  [remoteApiJava.dll+0xcd66]
 C  0x00000000026e5e34
 
 Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
-j  coppelia.remoteApi.simxGetObjectHandle(ILjava/lang/String;Lcoppelia/IntW;I)I+0
+j  com.quadcopter.coppelia.remoteApi.simxGetObjectHandle(ILjava/lang/String;Lcoppelia/IntW;I)I+0
 j  complexCommandTest.main([Ljava/lang/String;)V+59
 v  ~StubRoutines::call_stub
 j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
@@ -153,7 +153,7 @@ Deoptimization events (0 events):
 No events
 
 Internal exceptions (2 events):
-Event: 0.057 Thread 0x00000000024cd800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x0000000780913040) thrown at [D:\re\puppet\workspace\8-2-build-windows-amd64-cygwin\jdk8u73\6086\hotÛ∆êK	≠?
+Event: 0.057 Thread 0x00000000024cd800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x0000000780913040) thrown at [D:\re\puppet\workspace\8-2-build-windows-amd64-cygwin\jdk8u73\6086\hotÔøΩ∆êKÔøΩ	ÔøΩ?
 Event: 0.057 Thread 0x00000000024cd800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x0000000780913328) thrown at [D:\re\puppet\workspace\8-2-build-windows-amd64-cygwin\jdk8u73\6086\hotspot\src\share\vm\
 
 Events (10 events):
@@ -210,7 +210,7 @@ Dynamic libraries:
 0x00007ffc1cf10000 - 0x00007ffc1d09c000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
 
 VM Arguments:
-jvm_args: -Djava.library.path=C:\Program Files (x86)\V-REP3\V-REP_PRO_EDU\programming\remoteApiBindings\java\lib\64Bit -Didea.launcher.port=7533 -Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA 15.0.4\bin -Dfile.encoding=UTF-8 
+jvm_args: -Djava.library.path=C:\Program Files (x86)\V-REP3\V-REP_PRO_EDU\programming\remoteApiBindings\java\lib\64Bit -Didea.launcher.port=7533 -Didea.launcher.bin.path=C:\Program Files (x86)\JetBrains\IntelliJ IDEA 15.0.4\bin -Dfile.encoding=UTF-8
 java_command: com.intellij.rt.execution.application.AppMain complexCommandTest
 java_class_path (initial): C:\Program Files\Java\jdk1.8.0_73\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\rt.jar;C:\Users\solov\IdeaProjects\Quadcopters\out\production\Quadcopters;C:\Program Files (x86)\JetBrains\IntelliJ IDEA 15.0.4\lib\idea_rt.jar
 Launcher Type: SUN_STANDARD
